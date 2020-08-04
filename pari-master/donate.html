@@ -1,0 +1,423 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pari</title>
+    <link rel="icon" href="./assets/icon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"> -->
+    <link rel="icon" href="./assets/icon.ico" type="image/x-icon" />
+    <style>
+        body {
+            margin: 0;
+            position: relative;
+            font-size: 20px;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        @font-face {
+            font-family: "samarkhan";
+            src: url(./font/samarkhan.ttf);
+        }
+
+        ul.topnav h5 {
+            text-decoration: none;
+            color: white;
+            padding: 0px;
+            margin: 0px 50px;
+            height: 60px;
+            display: inline-block;
+            font-family: samarkhan;
+        }
+
+        ul.topnav {
+            list-style-type: none;
+            width: 100%;
+            background-color: #f15652;
+            margin: 0;
+            top: 0;
+            padding: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        ul.topnav li a {
+            display: block;
+            position: relative;
+            right: 0;
+            color: white;
+            text-align: center;
+            font-family: 'IBM Plex Sans', sans-serif;
+            margin: 0px;
+            padding: 20px 10px 20px 10px;
+            ;
+            font-size: 18px;
+            /* height: 80px; */
+            text-decoration: none;
+        }
+
+        label {
+            display: inline-block;
+            width: 160px;
+        }
+
+        input {
+            display: inline-block;
+            background-color: #FFF;
+            height: 30px;
+            width: 150px;
+            border: 2px solid tomato;
+        }
+
+        ul.topnav li a:hover {
+            background-color: darksalmon;
+        }
+
+        ul.topnav li {
+            float: right;
+        }
+
+        .title {
+            color: black;
+            margin: auto;
+            width: 30%;
+        }
+
+        .container {
+            width: 80%;
+            padding-right: 45px;
+            padding-left: 45px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .underline {
+            background-color: #f15652;
+            height: 3px;
+            width: 5%;
+            margin: auto
+        }
+
+        h1 {
+            font-family: 'IBM Plex Sans', sans-serif;
+            text-align: center;
+            color: #000;
+            font-size: 40px;
+            font-weight: 50;
+            margin: 20px 0px;
+        }
+
+        .button {
+            display: inline-block;
+            border: none;
+            outline: none;
+            padding: 1rem 2rem;
+            margin: 0;
+            text-decoration: none;
+            background: tomato;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            transition: background 250ms ease-in-out, transform 150ms ease;
+            text-align: center;
+            border-radius: 5px;
+            margin: auto;
+            height: 30px;
+            width: 100px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        select {
+            margin: 5px 5px 5px 0px;
+            width: 250px;
+            padding: 15px 5px 15px 5px;
+            font-size: 16px;
+            border: 2px solid tomato;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url(https://image.flaticon.com/icons/svg/1098/1098150.svg);
+            background-repeat: no-repeat;
+            background-size: 30px 30px;
+            background-position: center right;
+            background-origin: content-box;
+            background-color: #FFF;
+        }
+
+        select::-ms-expand {
+            display: none;
+            /* remove default arrow on ie10 and ie11 */
+        }
+
+        @media screen and (min-width:0\0) {
+            select {
+                background: none\9;
+                padding: 5px\9;
+            }
+        }
+
+        button:hover,
+        button:focus {
+            background: #f15652;
+            color: #FFF;
+        }
+
+        button:focus {
+            outline: 1px solid #fff;
+            outline-offset: -4px;
+        }
+
+        button:active {
+            transform: scale(0.99);
+        }
+
+        .divider {
+            margin-top: auto;
+            margin-bottom: auto;
+            height: 60%;
+            background-color: #f15652;
+        }
+
+        p {
+            font-family: 'IBM Plex Sans', sans-serif;
+            text-align: center;
+        }
+
+        #love {
+            animation: heart 1s step-end infinite;
+        }
+
+        @keyframes heart {
+
+            from,
+            to {
+                color: white
+            }
+            50% {
+                color: tomato;
+            }
+        }
+
+        .footer {
+            font-size: 15px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            background-color: #000;
+            padding: 0px;
+        }
+
+        .socialhover {
+            margin: auto;
+            color: #FFF;
+            text-align: center;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            display: block;
+            padding: 8px;
+            font-size: 25px;
+            background-color: #000;
+        }
+
+        .socialhover a:hover {
+            color: #fff;
+            background-color: tomato;
+        }
+
+        #assistanceCheckBox {
+            height: 20px;
+            margin: 0px;
+            width: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="topnav" id="navbar" style="background-color: #f15652">
+        <h5 href="#" style="font-family:samarkhan; font-weight: 400; font-size: 50px;">Pari</h5>
+        <li style="margin-right: 30px;"><a>Contact Us</a></li>
+        <li><a href="./checkStatus.html">Check Status</a></li>
+        <li><a style="float: right;" href="./request.html">Request Relief</a></li>
+        <li><a href="./donate.html">Donate</a></li>
+        <li><a href="./index.html#about">About Us</a></li>
+    </ul>
+    <div>
+        <h1>Donate</h1>
+        <div style="height: 40px;"></div>
+        <div class="container">
+            <div style="width:50%;padding-top:30px;display: inline-block;float: right;">
+                <div>
+                    <form id="donateForm">
+                        <label for="food"><i class="fas fa-utensils"></i>&nbsp Food: &nbsp</label>
+                        <input type="text" name="food" id="foodInput">
+                        &nbsp Quantity: &nbsp
+                        <input type="number" name="foodQuantity" id="foodQ" style="width: 50px; height:30px;margin-right: 10px;">
+                        <button class="button" id="foodBtn" onclick="clickBtn(id); return false;"
+                            style="padding: 0;">Add</button>
+                        <span id="foodCheck"></span><br><br>
+                        <label for="medicines"><i class="fas fa-prescription-bottle-alt"></i>&nbsp Medicines: &nbsp</label>
+                        <input type="text" name="medicines" id="medicineInput">
+                        &nbsp Quantity: &nbsp
+                        <input type="number" name="medicineQuantity" id="medsQ" style="width: 50px; height:30px;margin-right: 10px;">
+                        <button class="button" id="medicineBtn" onclick="clickBtn(id); return false;"
+                            style="padding: 0;">Add</button>
+                        <span id="medicinesCheck"></span><br><br>
+                        <label for="daily"><i class="fas fa-bed"></i>&nbsp Daily Needs: &nbsp</label>
+                        <input type="text" name="daily" id="dailyInput">
+                        &nbsp Quantity: &nbsp
+                        <input type="number" name="needsQuantity" id="needsQ" style="width: 50px; height:30px;margin-right: 10px;">
+                        <button class="button" id="dailyBtn" onclick="clickBtn(id); return false;"
+                            style="padding: 0;">Add</button>
+                        <span id="dailyCheck"></span><br><br>
+                    </form>
+                </div>
+            </div>
+            <div style="width:50%; float:left;display: inline-block;padding-top: 30px;">
+                <div>
+                    <form id="userD">
+                        <label for="name">Name:<span style="color: red">*</span></label>
+                        <input type="text" name="name" id="nameInput" style="width: 250px;" required>
+                        <br><br>
+                        <label for="phone">Phone Number:<span style="color: red">*</span></label>
+                        <input type="tel" name="phone" id="phoneInput" style="width: 250px;" required>
+                    </form>
+                    <label>Address:<span style="color: red">*</span></label>
+                    <textarea style="border: 2px solid tomato;width: 250px;" rows="4" cols="30" id="address" name="address" form="userD" required></textarea>
+                </div>
+                <form id="submitform" action="don.php" method="post">
+                    <input type="hidden" name="username" id="userName" value="">
+                    <input type="hidden" name="mobileno" id="mobileNumber" value="">
+                    <input type="hidden" name="useraddress" id="userAddress" value="">
+                    <input type="hidden" name="foodJson" id="foodJson" value="">
+                    <input type="hidden" name="medsJson" id="medsJson" value="">
+                    <input type="hidden" name="needsJson" id="needsJson" value="">
+                </form>
+            </div>
+            <div style="width: 100%;margin-top: 30px;position: relative;display: flex;">
+                <button class="button" onclick="submitForms();" style="padding: 0;border-radius: 40px;height: 40px;margin: auto;width: 15%;">Donate</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer">
+            <div style="width: 40%;float:left; color: white;height: 100%;margin-left: 10%;position: relative;">
+                <h2
+                    style="font-family: 'Roboto';font-weight: 400;letter-spacing: 2px;margin-bottom: 25px;margin-top: 25px;">
+                    You can save a life too <span class="fas fa-heart" id="love"></span> . </h2>
+            </div>
+            <div style="width: 40%;float: right;color: white;height: 100%;margin-right: 10%;">
+                <ul style="float: right;align-items: center;">
+                    <li class="socialhover" style="display:inline-block;margin: 0 3px; ">
+                        <a href="#" class="socialhover">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="socialhover" style="display:inline-block;margin: 0 3px; ">
+                        <a href="#" class="socialhover">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li class="socialhover" style="display:inline-block;margin: 0 3px;">
+                        <a href="#" class="socialhover">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </li>
+                    <li class="socialhover" style="display:inline-block;margin: 0 3px;">
+                        <a href="#" class="socialhover">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="./js/main.js"></script>
+<script src="https://kit.fontawesome.com/12c8620bb8.js"></script>
+<script>
+    var food = {};
+    var meds = {};
+    var needs = {};
+    
+    function changeVal() {
+        var quake = "https://image.flaticon.com/icons/svg/1684/1684355.svg";
+        var flood = "https://image.flaticon.com/icons/svg/1098/1098150.svg";
+        var cyclone = "https://image.flaticon.com/icons/svg/1146/1146892.svg";
+        var sel = document.getElementById("disaster");
+        var e = sel.options[sel.selectedIndex].value;
+        sel.style.background = "url('" + quake + "')";
+        sel.style.background = "url('" + flood + "')";
+        sel.style.background = "url('" + cyclone + "')";
+        sel.style.backgroundRepeat = "no-repeat";
+        sel.style.backgroundPosition = "center right";
+        sel.style.backgroundSize = "30px 30px";
+        sel.style.backgroundOrigin = "content-box";
+        console.log(e);
+    }
+    function clickBtn(id) {
+        if (id == "foodBtn") {
+            var f = document.getElementById("foodInput").value;
+            var q = document.getElementById("foodQ").value;
+            document.getElementById("foodCheck").innerHTML = document.getElementById("foodCheck").textContent + f + "-"+ q + ",";
+            document.getElementById("foodInput").value = "";
+            document.getElementById("foodQ").value = "";
+            food[f] = q;
+        }
+        if (id == "medicineBtn") {
+            var m = document.getElementById("medicineInput").value;
+            var q = document.getElementById("medsQ").value;
+            document.getElementById("medicinesCheck").innerHTML = document.getElementById("medicinesCheck").textContent + m  + "-" + q + ",";
+            document.getElementById("medicineInput").value = "";
+            document.getElementById("medsQ").value = "";
+            meds[m] = q;
+        }
+        if (id == "dailyBtn") {
+            var n = document.getElementById("dailyInput").value;
+            var q = document.getElementById("needsQ").value;
+            document.getElementById("dailyCheck").innerHTML = document.getElementById("dailyCheck").textContent + n + "-" + q + ",";
+            document.getElementById("dailyInput").value = "";
+            document.getElementById("needsQ").value = "";
+            needs[n] = q;
+        }
+        return false;
+    }
+
+    function submitForms() {
+        //Username
+        var name = document.getElementById("nameInput");
+        var uname = document.getElementById("userName");
+        uname.value = name.value;
+        //Mobile
+        var mobile = document.getElementById("phoneInput");
+        var ph = document.getElementById("mobileNumber");
+        ph.value = mobile.value;
+        //Address
+        var address = document.getElementById("address");
+        var add = document.getElementById("userAddress");
+        add.value = address.value;
+        //Food
+        var foodJson = JSON.stringify(food);
+        document.getElementById("foodJson").value = foodJson;
+        //Meds
+        var medsJson = JSON.stringify(meds);
+        document.getElementById("medsJson").value = medsJson;
+        //Needs
+        var needsJson = JSON.stringify(needs);
+        document.getElementById("needsJson").value = needsJson;
+        document.forms['submitform'].submit();
+
+        console.log(foodJson);
+        
+    }
+</script>
+
+</html>

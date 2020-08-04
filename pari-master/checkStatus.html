@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pari</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/status.css" />
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+            integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="icon" href="./assets/icon.ico" type="image/x-icon"/>
+    </head>
+    <body>
+        <ul class="topnav" id="navbar">
+            <h5 href="#" style="font-family:samarkhan; font-weight: 400; font-size: 50px;">Pari</h5>
+            <li style="margin-right: 30px;"><a>Contact Us</a></li>
+            <li><a href="./checkStatus.php">Check Status</a></li>
+            <li><a style="float: right;" href="./request.html">Request Relief</a></li>
+            <li><a href="./donate.html">Donate</a></li>
+            <li><a href="./index.html#about">About Us</a></li>
+        </ul>
+
+        <div>
+            <button class="button"
+                style="border-radius: 55%; width:70px;height:70px;position:fixed;right:3%;bottom:15%;padding-right: 32px;padding-left: 28px;background-color: tomato; z-index: 1;"><i
+                    class="fas fa-phone"></i></button>
+        </div>
+
+        <div class="container">
+            <div style="text-align:center;height:90%;">
+                <div style="width:45%;margin-right:5%;float:right;height:80%;margin-top:90px;display:inline-block;">
+                    <p style="font-size:30px;padding: 150px 100px;"><q style>At <span style="font-family: samarkhan;font-size: 35px;">Pari</span> we believe that Transparency and Trust are the most important values.</q></p>
+                </div>
+                <div style="vertical-align: middle; width:45%;margin-left:5%;float:left;margin-top:150px;margin-bottom:150px;border-radius: 10px;background-color: bisque;">
+                    <div style="display: inline-block;margin-top: 5%;margin-bottom: 5%;">
+                        <p style="font-size:25px;">Enter your donation id to check the details.</p>
+                        <form name="statusForm" method="post" action="sendMail.php" style="margin-bottom: 0px;text-align: left;margin-top: 50px;">
+                            <label for="donationid"
+                                style="text-align: left;display: inline-block;width: 200px;font-size:23px;height:30px;">Donation ID<span
+                                    style="color: red">*</span></label>
+                            <input type="text"
+                                style="display: inline-block;background-color: #FFF;height: 30px;width: 200px;height:30px;border: 2px solid tomato;"
+                                name="donationid" id="donationid" required>
+                            <br>
+                            <br>
+                            <label for="donationid"
+                                style="display: inline-block;width: 200px;font-size:23px;height:30px;text-align: left;">Email ID<span
+                                    style="color: red;text-align: left;">*</span></label>
+                            <input type="email"
+                                style="display: inline-block;background-color: #FFF;height: 30px;width: 200px;height:30px;border: 2px solid tomato;"
+                                name="emailid" id="emailid" required>
+                        </form>
+                        <br>
+                        <br>
+                        <button class="button" onclick="submitForm();">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer">
+                <div style="width: 40%;float:left; color: white;height: 100%;margin-left: 10%;position: relative;">
+                    <h2 style="font-family: 'Roboto';font-weight: 400;letter-spacing: 2px;margin-bottom: 25px;margin-top: 25px;">Made with <span class="fas fa-heart" id="love"></span> by Abhinav and Rohith</h2>
+                </div>
+                <div style="width: 40%;float: right;color: white;height: 100%;margin-right: 10%;">
+                    <ul style="float: right;align-items: center;">
+                        <li class="socialhover" style="display:inline-block;margin: 0 3px; ">
+                            <a href="#" class="socialhover">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="socialhover" style="display:inline-block;margin: 0 3px; ">
+                            <a href="#" class="socialhover">
+                                <i class="far fa-envelope"></i>
+                            </a>
+                        </li>
+                        <li class="socialhover" style="display:inline-block;margin: 0 3px;">
+                            <a href="#" class="socialhover">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </li>
+                        <li class="socialhover" style="display:inline-block;margin: 0 3px;">
+                            <a href="#" class="socialhover">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script>
+        function submitForm() {
+            var email = document.getElementById("emailid");
+            var donation = document.getElementById("donationid");
+            if (email.value !== "" & donation.value !== "") {
+                document.forms['statusForm'].submit();    
+            }else{
+                alert("Please fill all the fields.");
+            }
+            
+        }
+    </script>
+    <script src="./js/main.js"></script>
+    <script>
+        //Slideshow
+        var slideIndex = 0;
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        showSlides();
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 5000); // Change image every 2 seconds
+        }
+    </script>
+</html>
